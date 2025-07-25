@@ -1,5 +1,10 @@
 import Sidebar from '../components/sidebar';
 import Navbar from '../components/navbar';
+import Expense from '../components/expense';
+import Graph from '../components/graph';
+import Transactions from '../components/transactionsTable';
+import Walletcard from '../components/walletCard';
+import sheduledTransactions from '../components/sheduledTransactions';
 import React from 'react'
 
 export default function home() {
@@ -16,13 +21,13 @@ export default function home() {
 
         <div className='flex flex-row '>
           <div className='flex flex-col'>
-            <p>Div1</p>
-            <p>Div2</p>
-            <p>Div3</p>
+            <p><Expense/></p>
+            <p><Graph/></p>
+            <p><Transactions/></p>
           </div>
           <div className='flex flex-col'>
-            <p>Div1</p>
-            <p>Div2</p>
+            <p><Walletcard/></p>
+            <p><sheduledTransactions/></p>
           </div>
         </div>
 
