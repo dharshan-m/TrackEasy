@@ -4,7 +4,7 @@ import Expense from '../components/expense';
 import Graph from '../components/graph';
 import Transactions from '../components/transactionsTable';
 import Walletcard from '../components/walletCard';
-import sheduledTransactions from '../components/sheduledTransactions';
+import Sheduledrtansactions from '../components/sheduledTransactions';
 import React from 'react'
 
 export default function home() {
@@ -27,7 +27,7 @@ export default function home() {
           </div>
           <div className='flex flex-col'>
             <p><Walletcard/></p>
-            <p><sheduledTransactions/></p>
+            <p><Sheduledrtansactions/></p>
           </div>
         </div>
 

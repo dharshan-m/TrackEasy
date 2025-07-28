@@ -6,7 +6,7 @@ import Card3 from '../assets/card3.png'
 export default function walletCard() {
   return (
     <div className='ml-7'>
-        <div className='flex flex-row justify-between items-center pb-2'>
+        <div className='flex flex-row justify-between items-center pb-2 pr-10'>
             <p className='font-semibold'>Wallet</p>
             <img src={More} alt='more icon'/>
         </div>

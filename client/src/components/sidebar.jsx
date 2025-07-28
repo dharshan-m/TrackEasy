@@ -1,4 +1,5 @@
     import React, { useState } from 'react'
+    import { useNavigate } from 'react-router-dom';
     import Logo from '../assets/logo.png'
     import Dashboard from '../assets/Dashboard1.png'
     import Transactions from '../assets/Transactions1.png'
@@ -7,14 +8,15 @@
     import Logout from '../assets/Logout.png'
     import Invoices from '../assets/Invoices1.png'
     import MyWallets from '../assets/MyWallets1.png'
-    export default function sidebar() {
+    export default function Sidebar() {
+        const navigate = useNavigate();
         const [activateButton, setActivateButton] = useState(0);
         const menuButtons =[
-            {label: 'Dashboard', icon: Dashboard},
-            {label:'Transactions', icon: Transactions},
-            {label:'Invoices', icon: Invoices}, 
-            {label:'My Wallets', icon: MyWallets},
-            {label:'Settings', icon: Settings},
+            {label: 'Dashboard', icon: Dashboard, path: '/home'},
+            {label:'Transactions', icon: Transactions, path:'/transactions'},
+            {label:'Invoices', icon: Invoices, path:'/invoices'}, 
+            {label:'My Wallets', icon: MyWallets, path:'/myWallets'},
+            {label:'Settings', icon: Settings, path:'/settings'},
         ]
         return (
             <div className='flex flex-col justify-between w-[250px] h-[100vh] p-5 bg-gray-100'>
@@ -26,7 +28,10 @@
                         {menuButtons.map((items, index)=>(
                             <button 
                                 key={index} 
-                                onClick={()=>setActivateButton(index)} 
+                                    onClick={() => {
+                                    setActivateButton(index);
+                                    navigate(items.path); // ✅ navigate to path
+                                }}
                                 className={`flex flex-row items-center gap-2 font-semibold cursor-pointer w-[180px] h-[40px] rounded-md p-3 ${activateButton === index ? 'bg-[#18cb96]' : 'none'} hover:bg-[#18cb96]`}
                             >
                                 <img src={items.icon} alt={`${items.label}-img`}/>
