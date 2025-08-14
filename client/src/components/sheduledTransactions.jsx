@@ -1,8 +1,15 @@
 import React from "react";
+import {useNavigate} from 'react-router-dom';
 import Avathar from "../assets/Avathar.png";
 import Expand from "../assets/expand.png";
 
 export default function sheduledTransactions() {
+
+  const navigate = useNavigate();
+
+  const handleViewBtn=()=>{
+    navigate('/transactions');
+  }
 
   const transactions=[
     {image:Avathar, name:"Saleh Ahmed", date:"April 28, 2022 at 11:00", amount:"- ₹2000"},
@@ -15,7 +22,7 @@ export default function sheduledTransactions() {
     <div className="pt-3">
       <div className="flex flex-row justify-between items-center">
         <p className="font-semibold ml-7">Scheduled Transactions</p>
-        <div  className='flex flex-row items-center'>   
+        <div  className='flex flex-row items-center cursor-pointer' onClick={handleViewBtn}>   
           <button className='text-[#18cb96] font-semibold cursor-pointer'>View All</button>
           <img className='w-[25px] h-[25px]' src={Expand} alt='dropdown'/>
         </div>

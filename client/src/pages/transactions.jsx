@@ -2,6 +2,7 @@ import React from 'react'
 import Sidebar from '../components/sidebar';
 import Navbar from '../components/navbar';
 import Search from '../components/search';
+import TransactionsDataGrid from '../components/transactionsDataGrid';
 
 export default function transactions() {
   return (
@@ -17,7 +18,7 @@ export default function transactions() {
                 <Search/>
             </div>
             <div>
-                transactions tabe
+                <TransactionsDataGrid/>
             </div>
         </div>
     </div>

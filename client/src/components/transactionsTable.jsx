@@ -1,13 +1,20 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom';
 import Expand from '../assets/expand.png'
 
 export default function transactionsTable() {
+    const navigate = useNavigate();
+
+    const handleViewbtn=()=>{
+        navigate('/transactions');
+    }
+
   return (
     <div className='border border-[#F5F5F5] rounded-xl ml-10 mt-5 shadow-md'>
         <div className='flex flex-row items-center justify-between p-2'>
             <p className='font-semibold text-[20px]'>Recent Transactions</p>
-            <div  className='flex flex-row items-center'>   
-                <button className='text-[#18cb96] font-semibold cursor-pointer'>View All</button>
+            <div  className='flex flex-row items-center cursor-pointer' onClick={handleViewbtn}>   
+                <button className='text-[#18cb96] font-semibold cursor-pointer' >View All</button>
                 <img className='w-[25px] h-[25px]' src={Expand} alt='dropdown'/>
             </div>
         </div>
